@@ -11,6 +11,8 @@ struct binary_tree *right;
 
 struct binary_tree *Insert(int,struct binary_tree*);
 void inorder(struct binary_tree*);
+void preorder(struct binary_tree*);
+void postorder(struct binary_tree*);
 
 
 void main(){
@@ -20,7 +22,7 @@ struct binary_tree *root=NULL;
 
 int flag=1,ch,d;
 while(flag){
-printf("\nEnter Choice::\n1.Insert\n2.inorder traversal\n3.exit");
+printf("\nEnter Choice::\n1.Insert\n2.inorder traversal\n3.preorder\n4.postorder\n5.exit");
 scanf("%d",&ch);
 
 switch(ch){
@@ -32,7 +34,13 @@ break;
 case 2:inorder(root);
 break;
 
-case 3:flag=0;
+case 3:preorder(root);
+break;
+
+case 4:postorder(root);
+break;
+
+case 5:flag=0;
 break;
 
 default:printf("\nTry Again\n");
@@ -71,6 +79,28 @@ return;
 inorder(r->left);
 printf("%d",r->d);
 inorder(r->right);
+
+
+}
+
+void preorder(struct binary_tree *r){
+if(r==NULL)
+return;
+
+printf("%d",r->d);
+preorder(r->left);
+preorder(r->right);
+
+
+}
+
+void postorder(struct binary_tree *r){
+if(r==NULL)
+return;
+
+postorder(r->left);
+postorder(r->right);
+printf("%d",r->d);
 
 
 }
