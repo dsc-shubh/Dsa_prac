@@ -34,7 +34,7 @@ break;
 case 2:inorder(root);
 break;
 
-case 3:preorder(root);
+case 3:preorder(root); //please use comments for better understanding
 break;
 
 case 4:postorder(root);
@@ -62,7 +62,7 @@ r->left=NULL;
 else if(d<r->d)
 r->left=Insert(d,r->left);
 
-else if(d>r->d)
+else if(d>r->d)      // please use comments as im a beginner and unable to understand
 r->right=Insert(d,r->right);
 else
 printf("\nduplicate key\n");
